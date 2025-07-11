@@ -1,0 +1,27 @@
+# Pythonをコマンドプロンプトで使うには？また終了するには？
+Pythonを起動
+python
+
+exit()関数を使う
+python>>> exit()
+
+# 起動と終了ができた
+C:\Users\masah>python
+Python 3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> exit()
+
+C:\Users\masah>
+
+# 文字列のカンタンな操作
+>>> print('こんにちは'[0])
+こ
+>>> print('こんにちは'[0:2])
+こん
+>>> print('こんにちは'[:2])
+こん
+>>> print('こんにちは'[100])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+IndexError: string index out of range
+
