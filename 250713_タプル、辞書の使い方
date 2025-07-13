@@ -1,0 +1,103 @@
+# リストの復習
+>>> n = [1,2,3,4,5]
+>>> n.index(3)
+2
+>>> n.count
+<built-in method count of list object at 0x0000012DE1BB11C0>
+>>> n.count()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: list.count() takes exactly one argument (0 given)
+>>> n.append(100)
+>>> n
+[1, 2, 3, 4, 5, 100]
+>>> n.pop()
+100
+>>> n
+
+# タプルやリストの長さを求めるPythonの関数は？
+→len関数で長さがわかる
+>>> len(n)
+5
+>>> len(t)
+6
+
+# タプルの使い方
+[1, 2, 3, 4, 5]
+>>> t = (1,2,3,4,1,2)
+>>> t
+(1, 2, 3, 4, 1, 2)
+>>> t[0] = 100
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'tuple' object does not support item assignment
+>>> type(t)
+<class 'tuple'>
+>>> t[0]
+1
+>>> t.index(1)
+0
+>>> t.count(0)
+0
+>>> len(n)
+5
+>>> lent(t)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'lent' is not defined. Did you mean: 'len'?
+>>> len(t)
+6
+>>> n_t = (1,2,3) + (4,5,6)
+>>> n_t
+(1, 2, 3, 4, 5, 6)
+
+# アンパッキング
+>>> n_t = (1,2,3) + (4,5,6)
+>>> n_t
+(1, 2, 3, 4, 5, 6)
+>>> num_tuple = (10, 20)
+>>> x, y = num_tuple
+>>> print(x, y)
+10 20
+>>> x, y = 30, 40
+>>> print(x, y)
+30 40
+>>> x = 10
+>>> y = 20
+>>> x, y
+(10, 20)
+>>> x, y = y, x
+>>> x, y
+(20, 10)
+
+# 辞書型の使い方
+>>> d = {'x':10, 'y':20}
+>>> d
+{'x': 10, 'y': 20}
+>>> type(d)
+<class 'dict'>
+>>> d['x'])
+  File "<stdin>", line 1
+    d['x'])
+          ^
+SyntaxError: unmatched ')'
+>>> d['x']
+10
+>>> d['y']
+20
+>>> d['x'] = 100
+>>> d
+{'x': 100, 'y': 20}
+>>> d['x'] = 'xxxx'
+>>> d
+{'x': 'xxxx', 'y': 20}
+>>> d.values()
+dict_values(['xxxx', 20])
+>>> help(d)
+Help on dict object:
+class dict(object)
+ |  dict() -> new empty dictionary
+ |  dict(mapping) -> new dictionary initialized from a mapping object's
+ |      (key, value) pairs
+>>> d.keys()
+dict_keys(['x', 'y'])
