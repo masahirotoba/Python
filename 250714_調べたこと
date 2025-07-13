@@ -1,0 +1,27 @@
+# PythonのNoneとNULLは異なる概念です。
+- Pythonの組み込み定数で、「値がない」「何も指していない」状態を表現
+- NoneType型の唯一のインスタンス
+- オブジェクトとして存在し、メモリ上に実体がある
+- is None や == None で比較可能
+
+# while True: は無限ループを作る構文です。Trueは常に真なので、理論上は永遠に続きます。
+while True の基本
+pythonwhile True:
+    print("これは永遠に続く")  # Ctrl+C で強制終了が必要
+ループを止める方法
+実際のプログラムでは、ループ内で条件を作って止めます：
+
+break: ループを完全に抜ける
+continue: 現在の反復をスキップして次の反復へ
+return: 関数内なら関数ごと終了
+
+# インデックスにアクセスできずにエラーになる
+some_list = [1,2,3,4,5]
+for i in some_list:
+  print(some_list[i])
+
+# これならだいじょうぶ
+some_list = [1,2,3,4,5]
+for i in some_list:
+  print(some_list[i-1])
+
