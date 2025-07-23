@@ -1,0 +1,16 @@
+# Pythonのファイルを作成
+→hello.py というファイルを作成
+print("Hello, World!")
+
+# ファイルがある場所まで移動
+→ここではデスクトップに移動
+cd "C:\Users\○○\Desktop"
+
+# pythonコマンドで実行にかける
+C:\Users\○○\Desktop>python hello.py
+Hello, World!
+
+# 実行のコマンド
+python ○○.py
+
+# サクラエディタでPythonのコードは書けばOK
