@@ -1,0 +1,39 @@
+# 通常の実行方法
+C:\Users\○○\Desktop>python hello.py
+Hello, World
+
+# スクリプトに引数を渡せる
+C:\Users\○○\Desktop>python hello.py option1 option2
+Hello, World
+
+# コードを以下のように直す
+import sys
+print("Hello, World")
+print(sys.argv)
+
+# コードを直した後
+C:\Users\○○\Desktop>python hello.py option1 option2
+Hello, World
+['hello.py', 'option1', 'option2']
+
+# for文を組み合わせる
+import sys
+for i in sys.argv:
+	print(sys.argv)
+
+# こうなってしまった
+C:\Users\○○\Desktop>python hello.py option1 option2
+['hello.py', 'option1', 'option2']
+['hello.py', 'option1', 'option2']
+['hello.py', 'option1', 'option2']
+
+# こうすれば1つ1つ出力できる
+import sys
+for i in sys.argv:
+	print(i)
+
+# 実行結果
+C:\Users\○○\Desktop>python hello.py option1 option2
+hello.py
+option1
+option2
