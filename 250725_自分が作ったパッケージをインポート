@@ -1,0 +1,32 @@
+# Pythonを実行したいフォルダの場所まで移動してから、pythonコマンドで起動
+C:\Users\○○\Desktop\サンプルデータ>python
+Python 3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+
+# __pycache__フォルダが自動的に作られた
+Pythonが自動的に作成するキャッシュフォルダ
+
+目的
+Pythonモジュール（.pyファイル）をインポートした時に、コンパイル済みのバイトコード（.pycファイル）を保存する場所
+次回同じモジュールをインポートする際の読み込み速度を向上させるため
+
+作成されるタイミング
+import utilsを実行した時
+Pythonがutils.pyをバイトコードにコンパイルして、その結果を__pycache__内に保存
+
+中身
+utils.cpython-39.pycのようなファイル（Pythonのバージョンによって名前が変わる）
+これはコンパイル済みのバイトコードファイル
+
+# フォルダを移動したら実行できた
+>>> import utils
+>>> r = utils.say_twice('Hello')
+>>> print(r)
+Hello!Hello!
+
+# フォルダ内のpyファイルをインポート
+>>> from sample2 import human
+>>> print (human.sing())
+sing
+>>>
+
