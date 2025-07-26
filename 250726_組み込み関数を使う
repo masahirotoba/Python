@@ -1,0 +1,38 @@
+# 組み込み関数を確認できる
+>>> print(globals())
+{'__name__': '__main__', '__doc__': None, '__package__': None, '__loader__': <class '_frozen_importlib.BuiltinImporter'>, '__spec__': None, '__annotations__': {}, '__builtins__': <module 'builtins' (built-in)>}
+
+# ketごとになってしまう
+>>> ranking = { 'A':100, 'B':85, 'C':92 }
+>>> for key in ranking: print(key)
+...
+A
+B
+C
+
+# ... （セカンダリプロンプト）
+複数行にわたる構文の続きの入力を待っている状態
+for文、if文、関数定義などの途中で表示される
+
+# インデントがないのでエラーになるので注意
+ranking = { 'A':100, 'B':85, 'C':92 }
+for key in ranking:
+... print(key)
+  File "<stdin>", line 2
+    print(key)
+    ^^^^^
+IndentationError: expected an indented block after 'for' statement on line 1
+
+# これなら正常に動く
+IndentationError: expected an indented block after 'for' statement on line 1
+>>> ranking = { 'A':100, 'B':85, 'C':92 }
+>>> for key in ranking:
+...     print(key)
+...
+A
+B
+C
+
+# 組み込みのsorted関数を使う
+>>> print(sorted(ranking, key = ranking.get))
+['B', 'C', 'A']
