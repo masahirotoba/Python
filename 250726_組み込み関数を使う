@@ -33,6 +33,26 @@ A
 B
 C
 
+# ... （セカンダリプロンプト）を終わらせる方法
+
+空行（何も入力せずにEnter） で実行される
+
+例：
+python>>> for key in ranking:        # Enterで...に移行
+...     print(key)            # Enterで次の...に移行
+...                           # 空行でEnter → 実行される
+A
+B
+C
+>>>
+
+一行コードの場合：
+python>>> print("Hello")            # Enterで即座に実行
+Hello
+>>>
+
+つまり、**複数行構文を終わらせるには「空行でEnter」**が必要で、単純にEnterキーだけでは続きの入力を求められます。この仕組みで、Pythonは複数行にわたるコードブロックがどこで終わるかを判断しています。
+
 # 組み込みのsorted関数を使う
 >>> print(sorted(ranking, key = ranking.get))
 ['B', 'C', 'A']
